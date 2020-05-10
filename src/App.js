@@ -1,25 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom';
 
-function App() {
+import Users from './users/pages/Users';
+import NewPlace from './places/pages/NewPlace';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      {/* <Route path="/" exact component={ Users }> 
+       path is like a filter , we add exact qui pend par defaut true */}
+      <Switch>
+        {/** url pour la page listing users: getAllUsers */}
+      <Route path="/" exact={true}>
+        <Users />
+      </Route>
+      {/** url pour la page formulaire add place:
+       *  le butoon submit doit lance api createUser */}
+      <Route path="/place/new">
+        <NewPlace />
+      </Route>
+      {/* si path ne convient a aoucin route on utilise redirect , 
+      ici il nous renvoie vers "/"  */}
+      <Redirect to="/" />
+      </Switch>
+    </Router>
   );
 }
 
