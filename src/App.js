@@ -16,7 +16,7 @@ const App = () => {
       </Route>
       {/** url pour la page formulaire add place:
        *  le butoon submit doit lance api createUser */}
-      <Route path="/place/new">
+      <Route path="/place/new" exact>
         <NewPlace />
       </Route>
       {/* si path ne convient a aoucin route on utilise redirect , 
