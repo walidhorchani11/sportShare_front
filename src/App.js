@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom
 
 import Users from './users/pages/Users';
 import NewPlace from './places/pages/NewPlace';
+import UserPlaces from './places/pages/UserPlaces';
 import MainNavigation from './shared/components/Navigation/MainNavigation';
 
 const App = () => {
@@ -22,6 +23,9 @@ const App = () => {
        *  le butoon submit doit lance api createUser */}
       <Route path="/places/new" exact>
         <NewPlace />
+      </Route>
+      <Route path="/users/:uid/places" exact>
+        <UserPlaces />
       </Route>
       {/* si path ne convient a aoucin route on utilise redirect , 
       ici il nous renvoie vers "/"  */}
