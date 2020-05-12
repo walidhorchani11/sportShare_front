@@ -24,7 +24,7 @@ const App = () => {
       <Route path="/places/new" exact>
         <NewPlace />
       </Route>
-      <Route path="/users/:uid/places" exact>
+      <Route path="/users/:userId/places" exact>
         <UserPlaces />
       </Route>
       {/* si path ne convient a aoucin route on utilise redirect , 
